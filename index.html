@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maxtra Walnuts</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: url('https://images.unsplash.com/photo-1574278941647-3e9d76b064ad?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+      background-size: cover;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.85);
+      z-index: -1;
+    }
+    html {
+      scroll-padding-top: 120px; /* Adjust to match header height */
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-color: #6b4c3b;
+      color: white;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      animation: slideDown 1s ease-out;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .logo img {
+      height: 100px;
+      border-radius: 7px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      margin: 0;
+      padding: 0;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .menu-toggle {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    @media (max-width: 768px) {
+      nav ul {
+        position: absolute;
+        top: 80px;
+        right: 0;
+        background: #6b4c3b;
+        flex-direction: column;
+        width: 200px;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+      }
+      nav ul.active {
+        transform: translateX(0);
+      }
+      .menu-toggle {
+        display: block;
+      }
+    }
+
+    #lang-toggle {
+      background: none;
+      border: 2px solid white;
+      border-radius: 6px;
+      color: white;
+      padding: 0.25rem 0.5rem;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease, color 0.3s ease;
+      margin-left: 1rem;
+    }
+
+    #lang-toggle:hover {
+      background: white;
+      color: #6b4c3b;
+    }
+
+    section {
+      padding: 2rem 1rem;
+      max-width: 800px;
+      margin: 2rem auto;
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 1s ease-in;
+    }
+    h2 {
+      color: #6b4c3b;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    h2 i {
+      color: #6b4c3b;
+    }
+    footer {
+      background-color: #e0d6cf;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #333;
+      animation: fadeIn 1s ease-in;
+      margin-top: 2rem;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 1rem;
+      background-color: #fff;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input, textarea {
+      padding: 0.75rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    input:focus, textarea:focus {
+      border-color: #6b4c3b;
+      outline: none;
+    }
+    button {
+      padding: 0.75rem;
+      background-color: #6b4c3b;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #5a3f33;
+    }
+    .blog-post {
+      background-color: #fff;
+      padding: 1rem;
+      margin-top: 1rem;
+      border-left: 4px solid #6b4c3b;
+      box-shadow: 0 0 5px rgba(0,0,0,0.05);
+      border-radius: 4px;
+    }
+    .blog-post h3 {
+      margin-top: 0;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+  <script>
+    let currentLang = 'sr';
+    function toggleLanguage() {
+      const elements = document.querySelectorAll('.lang');
+      currentLang = currentLang === 'sr' ? 'en' : 'sr';
+      elements.forEach(el => {
+        const newText = el.getAttribute(`data-${currentLang}`);
+        if (newText) el.textContent = newText;
+      });
+    }
+
+    function validateForm(event) {
+      const form = document.querySelector('form');
+      const name = form.name.value.trim();
+      const email = form.email.value.trim();
+      const message = form.message.value.trim();
+      let isValid = true;
+      let errorMsg = "";
+
+      if (!name) {
+        errorMsg += "Unesite vaše ime.\n";
+        isValid = false;
+      }
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        errorMsg += "Unesite validnu email adresu.\n";
+        isValid = false;
+      }
+      if (!message) {
+        errorMsg += "Unesite poruku.\n";
+        isValid = false;
+      }
+
+      if (!isValid) {
+        event.preventDefault();
+        alert(errorMsg);
+      }
+    }
+
+    function toggleMenu() {
+      const navLinks = document.querySelector('nav ul');
+      navLinks.classList.toggle('active');
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="Maxtra Walnuts Logo" />
+      <span class="lang" data-sr="Maxtra Orasi" data-en="Maxtra Walnuts">Maxtra Orasi</span>
+    </div>
+    <button id="lang-toggle" onclick="toggleLanguage()">🇷🇸 / 🇬🇧</button>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#benefits"><i class="fas fa-seedling"></i> <span class="lang" data-sr="Prednosti" data-en="Benefits">Prednosti</span></a></li>
+        <li><a href="#about"><i class="fas fa-info-circle"></i> <span class="lang" data-sr="O nama" data-en="About Us">O nama</span></a></li>
+        <li><a href="#recipes"><i class="fas fa-utensils"></i> <span class="lang" data-sr="Recepti" data-en="Recipes">Recepti</span></a></li>
+        <li><a href="#blog"><i class="fas fa-blog"></i> <span class="lang" data-sr="Blog" data-en="Blog">Blog</span></a></li>
+        <li><a href="#contact"><i class="fas fa-envelope"></i> <span class="lang" data-sr="Kontakt" data-en="Contact">Kontakt</span></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="benefits">
+    <h2><i class="fas fa-seedling"></i> <span class="lang" data-sr="Prednosti" data-en="Benefits">Prednosti</span></h2>
+    <p class="lang"
+       data-sr="Orasi su izvor zdravlja. Prepuni su antioksidanasa, Omega-3 masnih kiselina i esencijalnih vitamina i minerala. Konzumacija oraha podržava zdravlje srca, funkciju mozga i može pomoći u smanjenju upala."
+       data-en="Walnuts are a powerhouse of nutrients. They're packed with antioxidants, Omega-3 fatty acids, and essential vitamins and minerals. Eating walnuts supports heart health, brain function, and may even help reduce inflammation.">
+       Orasi su izvor zdravlja. Prepuni su antioksidanasa, Omega-3 masnih kiselina i esencijalnih vitamina i minerala...
+    </p>
+  </section>
+
+  <section id="about">
+    <h2><i class="fas fa-info-circle"></i> <span class="lang" data-sr="O nama" data-en="About Us">O nama</span></h2>
+    <p class="lang"
+       data-sr="Osnovani 2020. godine, Maxtra Orasi se posvećuju isporuci najkvalitetnijih oraha direktno sa naših voćnjaka na vaš sto. Verujemo u održivu poljoprivredu, poštenu trgovinu i čistu prirodu."
+       data-en="Founded in 2020, Maxtra Walnuts is committed to delivering the highest quality walnuts directly from our orchards to your table. We believe in sustainable farming, honest business practices, and the pure goodness of nature.">
+       Osnovani 2020. godine, Maxtra Orasi se posvećuju...
+    </p>
+  </section>
+
+  <section id="recipes">
+    <h2><i class="fas fa-utensils"></i> <span class="lang" data-sr="Recepti" data-en="Recipes">Recepti</span></h2>
+    <p class="lang"
+       data-sr="Otkrijte ukusne načine za uživanje u orasima! Od klasičnih kolača do slanih jela kao što je pesto od oraha."
+       data-en="Discover delicious ways to enjoy walnuts! From classic walnut brownies to savory walnut pesto.">
+       Otkrijte ukusne načine za uživanje u orasima!
+    </p>
+  </section>
+
+  <section id="blog">
+    <h2><i class="fas fa-blog"></i> <span class="lang" data-sr="Blog" data-en="Blog">Blog</span></h2>
+    <div class="blog-post">
+      <h3 class="lang" data-sr="Zašto su orasi savršena užina" data-en="Why Walnuts are the Perfect Snack">Zašto su orasi savršena užina</h3>
+      <p class="lang" data-sr="Orasi nisu samo ukusni, već pružaju energiju tokom celog dana..." data-en="Walnuts are not only tasty but also provide sustained energy throughout your day...">Orasi nisu samo ukusni, već pružaju energiju...</p>
+    </div>
+    <div class="blog-post">
+      <h3 class="lang" data-sr="Od naših voćnjaka do vašeg stola" data-en="From Our Orchards to Your Table">Od naših voćnjaka do vašeg stola</h3>
+      <p class="lang" data-sr="Pogledajte kako se orasi uzgajaju, beru i dostavljaju..." data-en="Get a behind-the-scenes look at how walnuts are grown, harvested, and delivered...">Pogledajte kako se orasi uzgajaju...</p>
+    </div>
+    <div class="blog-post">
+      <h3 class="lang" data-sr="Koliko je tesko sacuvati plodove u intenzivnoj proizvodnji?" data-en="How hard is protect wallnuts from patogens today?">Koliko je tesko sacuvati plodove u intenzivnoj proizvodnji?</h3>
+      <p class="lang" data-sr="Pogledajte kako se orasi uzgajaju, beru i dostavljaju..." data-en="Get a behind-the-scenes look at how walnuts are grown, harvested, and delivered...">...</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2><i class="fas fa-envelope"></i> <span class="lang" data-sr="Kontakt" data-en="Contact">Kontakt</span></h2>
+    <p>Email: g.gajic@yahoo.com</p>
+    <p class="lang" data-sr="Telefon: +381-64-245-9798" data-en="Phone: +381-64-245-9798">Telefon: +381-64-245-9798</p>
+    <p class="lang" data-sr="Adresa: Hajduk Stanka 119, Klenje 15357" data-en="Address: Hajduk Stanka 119, Klenje 15357">Adresa: Hajduk Stanka 119, Klenje 15357</p>
+
+    <form action="https://formspree.io/f/mzzrdrda" method="POST" onsubmit="validateForm(event)">
+      <input type="text" name="name" placeholder="Ime / Name" required />
+      <input type="email" name="email" placeholder="Email" required />
+      <textarea name="message" rows="5" placeholder="Poruka / Message" required></textarea>
+      <button type="submit"><i class="fas fa-paper-plane"></i> <span class="lang" data-sr="Pošalji poruku" data-en="Send Message">Pošalji poruku</span></button>
+    </form>
+  </section>
+
+  <footer>
+    <span class="lang" data-sr="&copy; 2020 Maxtra Orasi. Sva prava zadržana." data-en="&copy; 2020 Maxtra Walnuts. All rights reserved.">
+      &copy; 2020 Maxtra Orasi. Sva prava zadržana.
+    </span>
+  </footer>
+</body>
+</html>

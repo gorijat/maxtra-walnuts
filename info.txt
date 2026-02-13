@@ -1,0 +1,2 @@
+Promo app o orasaru, podignut na netlify, ima opciju za slanje poruke i da ostavi mail,
+a ta opcija radi preko formspree, gde cak i cuva pristigle mejlove i poruke

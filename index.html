@@ -3,93 +3,638 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Maxtra Walnuts</title>
+  <title>Maxtra Orasi – domaći orasi iz Mačve</title>
+  <meta name="description" content="Maxtra Orasi: domaći orasi direktno iz voćnjaka. Prednosti konzumiranja oraha, recepti sa orasima i saveti o uzgoju, čuvanju i izboru oraha." />
+  <meta name="theme-color" content="#6b4c3b" />
+  <meta property="og:title" content="Maxtra Orasi" />
+  <meta property="og:description" content="Domaći orasi direktno iz voćnjaka – recepti, saveti i prednosti konzumiranja oraha." />
+  <meta property="og:image" content="logo.png" />
+  <meta property="og:type" content="website" />
+  <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="styles.css"> 
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
+  <a class="skip-link" href="#main"><span class="sr">Preskoči na sadržaj</span><span class="en">Skip to content</span></a>
+
   <header>
-    <div class="logo">
-      <img src="logo.png" alt="Maxtra Walnuts Logo" />
-      <span class="lang" data-sr="Maxtra Orasi" data-en="Maxtra Walnuts">Maxtra Orasi</span>
+    <a class="logo" href="#top">
+      <img src="logo.png" alt="Maxtra Orasi logo" width="320" height="320" />
+      <span><span class="sr">Maxtra Orasi</span><span class="en">Maxtra Walnuts</span></span>
+    </a>
+    <div class="header-actions">
+      <button id="lang-toggle" type="button" aria-label="Promeni jezik / Change language">
+        <span class="sr">🇬🇧 English</span><span class="en">🇷🇸 Srpski</span>
+      </button>
+      <button class="menu-toggle" type="button" aria-label="Meni" aria-expanded="false" aria-controls="main-nav">
+        <i class="fas fa-bars" aria-hidden="true"></i>
+      </button>
     </div>
-    <button id="lang-toggle" onclick="toggleLanguage()">🇷🇸 / 🇬🇧</button>
-    <div class="menu-toggle" onclick="toggleMenu()">
-      <i class="fas fa-bars"></i>
-    </div>
-    <nav>
+    <nav id="main-nav">
       <ul>
-        <li><a href="#benefits"><i class="fas fa-seedling"></i> <span class="lang" data-sr="Prednosti" data-en="Benefits">Prednosti</span></a></li>
-        <li><a href="#about"><i class="fas fa-info-circle"></i> <span class="lang" data-sr="O nama" data-en="About Us">O nama</span></a></li>
-        <li><a href="#recipes"><i class="fas fa-utensils"></i> <span class="lang" data-sr="Recepti" data-en="Recipes">Recepti</span></a></li>
-        <li><a href="#blog"><i class="fas fa-blog"></i> <span class="lang" data-sr="Blog" data-en="Blog">Blog</span></a></li>
-        <li><a href="#contact"><i class="fas fa-envelope"></i> <span class="lang" data-sr="Kontakt" data-en="Contact">Kontakt</span></a></li>
+        <li><a href="#benefits"><i class="fas fa-seedling" aria-hidden="true"></i> <span class="sr">Prednosti</span><span class="en">Benefits</span></a></li>
+        <li><a href="#about"><i class="fas fa-info-circle" aria-hidden="true"></i> <span class="sr">O nama</span><span class="en">About us</span></a></li>
+        <li><a href="#recipes"><i class="fas fa-utensils" aria-hidden="true"></i> <span class="sr">Recepti</span><span class="en">Recipes</span></a></li>
+        <li><a href="#blog"><i class="fas fa-blog" aria-hidden="true"></i> <span class="sr">Blog</span><span class="en">Blog</span></a></li>
+        <li><a href="#contact"><i class="fas fa-envelope" aria-hidden="true"></i> <span class="sr">Kontakt</span><span class="en">Contact</span></a></li>
       </ul>
     </nav>
   </header>
 
-  <section id="benefits">
-    <h2><i class="fas fa-seedling"></i> <span class="lang" data-sr="Prednosti" data-en="Benefits">Prednosti</span></h2>
-    <p class="lang"
-       data-sr="Orasi su izvor zdravlja. Prepuni su antioksidanasa, Omega-3 masnih kiselina i esencijalnih vitamina i minerala. Konzumacija oraha podržava zdravlje srca, funkciju mozga i može pomoći u smanjenju upala."
-       data-en="Walnuts are a powerhouse of nutrients. They're packed with antioxidants, Omega-3 fatty acids, and essential vitamins and minerals. Eating walnuts supports heart health, brain function, and may even help reduce inflammation.">
-       Orasi su izvor zdravlja. Prepuni su antioksidanasa, Omega-3 masnih kiselina i esencijalnih vitamina i minerala...
-    </p>
-  </section>
+  <main id="main">
 
-  <section id="about">
-    <h2><i class="fas fa-info-circle"></i> <span class="lang" data-sr="O nama" data-en="About Us">O nama</span></h2>
-    <p class="lang"
-       data-sr="Osnovani 2020. godine, Maxtra Orasi se posvećuju isporuci najkvalitetnijih oraha direktno sa naših voćnjaka na vaš sto. Verujemo u održivu poljoprivredu, poštenu trgovinu i čistu prirodu."
-       data-en="Founded in 2020, Maxtra Walnuts is committed to delivering the highest quality walnuts directly from our orchards to your table. We believe in sustainable farming, honest business practices, and the pure goodness of nature.">
-       Osnovani 2020. godine, Maxtra Orasi se posvećuju...
-    </p>
-  </section>
+    <!-- ===================== UVOD ===================== -->
+    <section id="top" class="hero">
+      <h1><span class="sr">Domaći orasi, od voćnjaka do vašeg stola</span><span class="en">Home-grown walnuts, from our orchard to your table</span></h1>
+      <p class="sr">Uzgajamo orahe u Klenju, u srcu Mačve, i trudimo se da do vas stignu onakvi kakve bismo i sami jeli: zdravi, pažljivo osušeni i bez nepotrebne dorade. Ovde ćete naći sve što treba da znate o orasima, od toga zašto su dobri za vas, preko recepata, do saveta kako da ih izaberete i sačuvate.</p>
+      <p class="en">We grow walnuts in Klenje, in the heart of the Mačva region, and we want them to reach you just the way we'd eat them ourselves: healthy, carefully dried and without unnecessary processing. Here you'll find everything you need to know about walnuts, from why they're good for you, to recipes, to tips on choosing and storing them.</p>
+      <a class="btn" href="#contact"><span class="sr">Poručite orahe</span><span class="en">Order walnuts</span></a>
+    </section>
 
-  <section id="recipes">
-    <h2><i class="fas fa-utensils"></i> <span class="lang" data-sr="Recepti" data-en="Recipes">Recepti</span></h2>
-    <p class="lang"
-       data-sr="Otkrijte ukusne načine za uživanje u orasima! Od klasičnih kolača do slanih jela kao što je pesto od oraha."
-       data-en="Discover delicious ways to enjoy walnuts! From classic walnut brownies to savory walnut pesto.">
-       Otkrijte ukusne načine za uživanje u orasima!
-    </p>
-  </section>
+    <!-- ===================== PREDNOSTI ===================== -->
+    <section id="benefits">
+      <h2><i class="fas fa-seedling" aria-hidden="true"></i> <span class="sr">Prednosti konzumiranja oraha</span><span class="en">Benefits of eating walnuts</span></h2>
+      <p class="sr">Orah je jedna od nutritivno najbogatijih namirnica koje možete imati u kuhinji. Već jedna šaka dnevno (oko 30 g) donosi zdrave masti, biljne proteine, vlakna i niz minerala. Evo šta orahe izdvaja:</p>
+      <p class="en">Walnuts are one of the most nutrient-dense foods you can keep in your kitchen. A single handful a day (about 30 g) provides healthy fats, plant protein, fibre and a range of minerals. Here's what makes walnuts stand out:</p>
 
-  <section id="blog">
-    <h2><i class="fas fa-blog"></i> <span class="lang" data-sr="Blog" data-en="Blog">Blog</span></h2>
-    <div class="blog-post">
-      <h3 class="lang" data-sr="Zašto su orasi savršena užina" data-en="Why Walnuts are the Perfect Snack">Zašto su orasi savršena užina</h3>
-      <p class="lang" data-sr="Orasi nisu samo ukusni, već pružaju energiju tokom celog dana..." data-en="Walnuts are not only tasty but also provide sustained energy throughout your day...">Orasi nisu samo ukusni, već pružaju energiju...</p>
-    </div>
-    <div class="blog-post">
-      <h3 class="lang" data-sr="Od naših voćnjaka do vašeg stola" data-en="From Our Orchards to Your Table">Od naših voćnjaka do vašeg stola</h3>
-      <p class="lang" data-sr="Pogledajte kako se orasi uzgajaju, beru i dostavljaju..." data-en="Get a behind-the-scenes look at how walnuts are grown, harvested, and delivered...">Pogledajte kako se orasi uzgajaju...</p>
-    </div>
-    <div class="blog-post">
-      <h3 class="lang" data-sr="Koliko je tesko sacuvati plodove u intenzivnoj proizvodnji?" data-en="How hard is protect wallnuts from patogens today?">Koliko je tesko sacuvati plodove u intenzivnoj proizvodnji?</h3>
-      <p class="lang" data-sr="Pogledajte kako se orasi uzgajaju, beru i dostavljaju..." data-en="Get a behind-the-scenes look at how walnuts are grown, harvested, and delivered...">...</p>
-    </div>
-  </section>
+      <div class="cards">
+        <article class="card">
+          <i class="fas fa-heart-pulse" aria-hidden="true"></i>
+          <h3><span class="sr">Zdravlje srca i krvnih sudova</span><span class="en">Heart and blood vessels</span></h3>
+          <p class="sr">Evropska agencija za bezbednost hrane (EFSA) potvrdila je da orasi doprinose poboljšanju elastičnosti krvnih sudova, uz dnevni unos od 30 g. Većina masti u orasima su nezasićene masti, koje su bolji izbor od zasićenih.</p>
+          <p class="en">The European Food Safety Authority (EFSA) has confirmed that walnuts contribute to the improvement of the elasticity of blood vessels, with a daily intake of 30 g. Most of the fat in walnuts is unsaturated, which is a better choice than saturated fat.</p>
+        </article>
+        <article class="card">
+          <i class="fas fa-fish-fins" aria-hidden="true"></i>
+          <h3><span class="sr">Biljni izvor omega-3</span><span class="en">Plant-based omega-3</span></h3>
+          <p class="sr">Orah je jedini orašasti plod sa značajnom količinom alfa-linolenske kiseline (ALA), biljne omega-3 masne kiseline: oko 2,7 g u 30 g. ALA doprinosi održavanju normalnog nivoa holesterola u krvi, uz dnevni unos od 2 g.</p>
+          <p class="en">Walnuts are the only tree nut with a significant amount of alpha-linolenic acid (ALA), a plant omega-3 fatty acid: about 2.7 g per 30 g. ALA contributes to the maintenance of normal blood cholesterol levels, with a daily intake of 2 g.</p>
+        </article>
+        <article class="card">
+          <i class="fas fa-shield-halved" aria-hidden="true"></i>
+          <h3><span class="sr">Antioksidansi</span><span class="en">Antioxidants</span></h3>
+          <p class="sr">Orasi sadrže polifenole (posebno elagitanine, uglavnom u tankoj opni oko jezgra), gama-tokoferol (oblik vitamina E) i bakar i mangan, koji doprinose zaštiti ćelija od oksidativnog stresa.</p>
+          <p class="en">Walnuts contain polyphenols (especially ellagitannins, mostly in the thin skin around the kernel), gamma-tocopherol (a form of vitamin E), and copper and manganese, which contribute to the protection of cells from oxidative stress.</p>
+        </article>
+        <article class="card">
+          <i class="fas fa-bolt" aria-hidden="true"></i>
+          <h3><span class="sr">Minerali za svaki dan</span><span class="en">Everyday minerals</span></h3>
+          <p class="sr">Šaka oraha pokriva oko polovine dnevnih potreba za bakrom i manganom. Bakar doprinosi normalnom funkcionisanju imunog sistema, magnezijum smanjenju umora i iscrpljenosti, a mangan održavanju normalnih kostiju.</p>
+          <p class="en">A handful of walnuts covers about half of your daily copper and manganese needs. Copper contributes to the normal function of the immune system, magnesium to the reduction of tiredness and fatigue, and manganese to the maintenance of normal bones.</p>
+        </article>
+        <article class="card">
+          <i class="fas fa-wheat-awn" aria-hidden="true"></i>
+          <h3><span class="sr">Vlakna i sitost</span><span class="en">Fibre and fullness</span></h3>
+          <p class="sr">Kombinacija masti, proteina i vlakana čini orahe zasitnom užinom. Umesto keksa ili čipsa, šaka oraha daje dugotrajniju energiju bez dodatog šećera i soli.</p>
+          <p class="en">The combination of fat, protein and fibre makes walnuts a filling snack. Instead of biscuits or crisps, a handful of walnuts gives longer-lasting energy with no added sugar or salt.</p>
+        </article>
+        <article class="card">
+          <i class="fas fa-brain" aria-hidden="true"></i>
+          <h3><span class="sr">Tema brojnih istraživanja</span><span class="en">A subject of ongoing research</span></h3>
+          <p class="sr">Naučnici ispituju vezu između redovnog jedenja oraha i zdravlja mozga, crevne mikroflore i kontrole telesne mase. Rezultati su obećavajući, ali još nisu konačni, pa ih navodimo kao zanimljivost, a ne kao tvrdnju.</p>
+          <p class="en">Scientists are studying links between eating walnuts regularly and brain health, gut microbiota and weight management. Results are promising but not yet conclusive, so we mention them as a point of interest rather than a claim.</p>
+        </article>
+      </div>
 
-  <section id="contact">
-    <h2><i class="fas fa-envelope"></i> <span class="lang" data-sr="Kontakt" data-en="Contact">Kontakt</span></h2>
-    <p>Email: g.gajic@yahoo.com</p>
-    <p class="lang" data-sr="Telefon: +381-64-245-9798" data-en="Phone: +381-64-245-9798">Telefon: +381-64-245-9798</p>
-    <p class="lang" data-sr="Adresa: Hajduk Stanka 119, Klenje 15357" data-en="Address: Hajduk Stanka 119, Klenje 15357">Adresa: Hajduk Stanka 119, Klenje 15357</p>
+      <h3 class="table-title"><span class="sr">Šta sadrži 30 g oraha (jedna šaka)</span><span class="en">What 30 g of walnuts (one handful) contains</span></h3>
+      <div class="table-wrap">
+        <table class="nutrition">
+          <thead>
+            <tr><th><span class="sr">Sastojak</span><span class="en">Nutrient</span></th><th><span class="sr">Količina</span><span class="en">Amount</span></th><th><span class="sr">% dnevnih potreba*</span><span class="en">% of reference intake*</span></th></tr>
+          </thead>
+          <tbody>
+            <tr><td><span class="sr">Energija</span><span class="en">Energy</span></td><td>≈ 196 kcal</td><td>≈ 10%</td></tr>
+            <tr><td><span class="sr">Masti</span><span class="en">Fat</span></td><td>≈ 19,6 g</td><td>–</td></tr>
+            <tr><td><span class="sr">od toga polinezasićene</span><span class="en">of which polyunsaturated</span></td><td>≈ 14,2 g</td><td>–</td></tr>
+            <tr><td><span class="sr">omega-3 (ALA)</span><span class="en">omega-3 (ALA)</span></td><td>≈ 2,7 g</td><td>–</td></tr>
+            <tr><td><span class="sr">Proteini</span><span class="en">Protein</span></td><td>≈ 4,6 g</td><td>≈ 9%</td></tr>
+            <tr><td><span class="sr">Vlakna</span><span class="en">Fibre</span></td><td>≈ 2,0 g</td><td>–</td></tr>
+            <tr><td><span class="sr">Mangan</span><span class="en">Manganese</span></td><td>≈ 1,0 mg</td><td>≈ 50%</td></tr>
+            <tr><td><span class="sr">Bakar</span><span class="en">Copper</span></td><td>≈ 0,48 mg</td><td>≈ 48%</td></tr>
+            <tr><td><span class="sr">Magnezijum</span><span class="en">Magnesium</span></td><td>≈ 47 mg</td><td>≈ 13%</td></tr>
+            <tr><td><span class="sr">Folat</span><span class="en">Folate</span></td><td>≈ 29 µg</td><td>≈ 15%</td></tr>
+            <tr><td><span class="sr">Vitamin B6</span><span class="en">Vitamin B6</span></td><td>≈ 0,16 mg</td><td>≈ 11%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note sr">* Prosečne vrednosti za jezgro oraha (izvor: USDA FoodData Central), u odnosu na referentne unose za odrasle iz propisa EU. Tvrdnje o dejstvu na ovoj stranici su odobrene zdravstvene izjave EU (Uredba 432/2012). Ove informacije nisu medicinski savet. Orasi su čest alergen; ako imate alergiju na orašaste plodove ili posebne zdravstvene potrebe, posavetujte se sa lekarom ili nutricionistom.</p>
+      <p class="note en">* Average values for walnut kernels (source: USDA FoodData Central), relative to EU adult reference intakes. Effect statements on this page are authorised EU health claims (Regulation 432/2012). This information is not medical advice. Walnuts are a common allergen; if you have a tree nut allergy or specific health needs, please consult a doctor or nutritionist.</p>
+    </section>
 
-    <form action="https://formspree.io/f/mzzrdrda" method="POST" onsubmit="validateForm(event)">
-      <input type="text" name="name" placeholder="Ime / Name" required />
-      <input type="email" name="email" placeholder="Email" required />
-      <textarea name="message" rows="5" placeholder="Poruka / Message" required></textarea>
-      <button type="submit"><i class="fas fa-paper-plane"></i> <span class="lang" data-sr="Pošalji poruku" data-en="Send Message">Pošalji poruku</span></button>
-    </form>
-  </section>
+    <!-- ===================== O NAMA ===================== -->
+    <section id="about">
+      <h2><i class="fas fa-info-circle" aria-hidden="true"></i> <span class="sr">O nama</span><span class="en">About us</span></h2>
+      <p class="sr">Maxtra Orasi je porodično gazdinstvo osnovano 2020. godine u Klenju, u Mačvi. Od početka nam je cilj isti: da najkvalitetnije orahe isporučimo direktno iz našeg voćnjaka na vaš sto, bez nakupaca i dugog stajanja po magacinima.</p>
+      <p class="en">Maxtra Walnuts is a family farm founded in 2020 in Klenje, in the Mačva region of Serbia. Our goal has been the same from day one: to deliver the highest-quality walnuts directly from our orchard to your table, with no middlemen and no long months in warehouses.</p>
+      <p class="sr">Verujemo u održivu poljoprivredu, poštenu trgovinu i čistu prirodu. Zato orahe beremo kada su potpuno zreli, sušimo ih polako i pažljivo, i prodajemo samo ono što bismo i sami stavili na trpezu.</p>
+      <p class="en">We believe in sustainable farming, honest business and the pure goodness of nature. That's why we harvest our walnuts when they are fully ripe, dry them slowly and carefully, and sell only what we would put on our own table.</p>
+      <ul class="checks">
+        <li><i class="fas fa-check" aria-hidden="true"></i> <span class="sr">Direktno od proizvođača</span><span class="en">Direct from the grower</span></li>
+        <li><i class="fas fa-check" aria-hidden="true"></i> <span class="sr">Orasi u ljusci i očišćena jezgra</span><span class="en">In-shell walnuts and shelled kernels</span></li>
+        <li><i class="fas fa-check" aria-hidden="true"></i> <span class="sr">Sveža berba svake jeseni</span><span class="en">A fresh harvest every autumn</span></li>
+      </ul>
+    </section>
+
+    <!-- ===================== RECEPTI ===================== -->
+    <section id="recipes">
+      <h2><i class="fas fa-utensils" aria-hidden="true"></i> <span class="sr">Recepti sa orasima</span><span class="en">Walnut recipes</span></h2>
+      <p class="sr">Otkrijte ukusne načine da uživate u orasima, od klasičnih kolača do slanih jela. Kliknite na recept da vidite sastojke i postupak.</p>
+      <p class="en">Discover delicious ways to enjoy walnuts, from classic cakes to savoury dishes. Click a recipe to see the ingredients and method.</p>
+
+      <p class="tip"><i class="fas fa-lightbulb" aria-hidden="true"></i>
+        <span class="sr"><strong>Savet:</strong> pre upotrebe u salati ili pestu, orahe kratko propržite na suvom tiganju, 3 do 5 minuta uz mešanje, dok ne zamirišu. Ukus postaje puniji, a gorčina iz opne blaža.</span>
+        <span class="en"><strong>Tip:</strong> before adding walnuts to a salad or pesto, toast them in a dry pan for 3 to 5 minutes, stirring, until fragrant. The flavour gets richer and any bitterness from the skin softens.</span>
+      </p>
+
+      <details class="recipe">
+        <summary>
+          <span class="recipe-title"><span class="sr">Orasnice</span><span class="en">Walnut crescents (Orasnice)</span></span>
+          <span class="meta"><i class="far fa-clock" aria-hidden="true"></i> 40 min · <span class="sr">oko 30 komada</span><span class="en">about 30 pieces</span></span>
+        </summary>
+        <div class="sr">
+          <p>Tradicionalni slavski i praznični kolač, bez brašna, koji se pravi od samo nekoliko sastojaka.</p>
+          <h4>Sastojci</h4>
+          <ul>
+            <li>300 g mlevenih oraha</li>
+            <li>100 g sitno seckanih oraha (za uvaljivanje)</li>
+            <li>250 g šećera</li>
+            <li>3 belanca</li>
+            <li>rendana korica jednog limuna</li>
+            <li>prah šećer za posipanje (po želji)</li>
+          </ul>
+          <h4>Priprema</h4>
+          <ol>
+            <li>Rernu zagrejte na 160 °C, a pleh obložite papirom za pečenje.</li>
+            <li>Belanca umutite sa šećerom u gustu penu.</li>
+            <li>Lagano umešajte mlevene orahe i koricu limuna. Smesa treba da bude lepljiva, ali da može da se oblikuje.</li>
+            <li>Vlažnim rukama oblikujte male kiflice, uvaljajte ih u seckane orahe i ređajte na pleh.</li>
+            <li>Pecite 15 do 20 minuta, dok ne dobiju svetlo zlatnu boju. Ostavite da se potpuno ohlade na plehu, pa ih tek onda skinite.</li>
+          </ol>
+        </div>
+        <div class="en">
+          <p>A traditional Serbian festive cookie with no flour, made from just a few ingredients.</p>
+          <h4>Ingredients</h4>
+          <ul>
+            <li>300 g ground walnuts</li>
+            <li>100 g finely chopped walnuts (for coating)</li>
+            <li>250 g sugar</li>
+            <li>3 egg whites</li>
+            <li>grated zest of one lemon</li>
+            <li>icing sugar for dusting (optional)</li>
+          </ul>
+          <h4>Method</h4>
+          <ol>
+            <li>Preheat the oven to 160 °C and line a baking tray with baking paper.</li>
+            <li>Whisk the egg whites with the sugar into a thick foam.</li>
+            <li>Gently fold in the ground walnuts and lemon zest. The mixture should be sticky but mouldable.</li>
+            <li>With wet hands, shape small crescents, roll them in the chopped walnuts and place them on the tray.</li>
+            <li>Bake for 15 to 20 minutes until light golden. Let them cool completely on the tray before lifting them off.</li>
+          </ol>
+        </div>
+      </details>
+
+      <details class="recipe">
+        <summary>
+          <span class="recipe-title"><span class="sr">Pesto od oraha i bosiljka</span><span class="en">Walnut and basil pesto</span></span>
+          <span class="meta"><i class="far fa-clock" aria-hidden="true"></i> 10 min · <span class="sr">4 porcije</span><span class="en">4 servings</span></span>
+        </summary>
+        <div class="sr">
+          <p>Domaća, pristupačnija verzija klasičnog pesta, u kojoj orasi zamenjuju pinjole. Odličan uz testeninu, na hlebu ili uz pečeno povrće.</p>
+          <h4>Sastojci</h4>
+          <ul>
+            <li>60 g oraha (kratko tostiranih)</li>
+            <li>50 g svežeg bosiljka</li>
+            <li>40 g rendanog tvrdog sira (parmezan ili zreli kravlji)</li>
+            <li>1 do 2 čena belog luka</li>
+            <li>100 ml maslinovog ulja</li>
+            <li>sok od pola limuna, so i biber</li>
+          </ul>
+          <h4>Priprema</h4>
+          <ol>
+            <li>U blender ili seckalicu stavite orahe i beli luk i kratko usitnite.</li>
+            <li>Dodajte bosiljak, sir i limunov sok, pa uz postepeno dolivanje ulja izmiksajte u gustu pastu.</li>
+            <li>Posolite i pobiberite po ukusu.</li>
+            <li>Čuvajte u tegli u frižideru do 5 dana, prelivenu tankim slojem ulja.</li>
+          </ol>
+        </div>
+        <div class="en">
+          <p>A home-style, more affordable take on classic pesto, with walnuts in place of pine nuts. Great with pasta, on bread or with roasted vegetables.</p>
+          <h4>Ingredients</h4>
+          <ul>
+            <li>60 g walnuts (lightly toasted)</li>
+            <li>50 g fresh basil</li>
+            <li>40 g grated hard cheese (Parmesan or a mature cow's cheese)</li>
+            <li>1 to 2 garlic cloves</li>
+            <li>100 ml olive oil</li>
+            <li>juice of half a lemon, salt and pepper</li>
+          </ul>
+          <h4>Method</h4>
+          <ol>
+            <li>Pulse the walnuts and garlic briefly in a blender or food processor.</li>
+            <li>Add the basil, cheese and lemon juice, then blend into a thick paste while slowly pouring in the oil.</li>
+            <li>Season with salt and pepper to taste.</li>
+            <li>Keep in a jar in the fridge for up to 5 days, covered with a thin layer of oil.</li>
+          </ol>
+        </div>
+      </details>
+
+      <details class="recipe">
+        <summary>
+          <span class="recipe-title"><span class="sr">Salata sa cveklom, kozjim sirom i orasima</span><span class="en">Beetroot, goat's cheese and walnut salad</span></span>
+          <span class="meta"><i class="far fa-clock" aria-hidden="true"></i> 15 min · <span class="sr">2 porcije</span><span class="en">2 servings</span></span>
+        </summary>
+        <div class="sr">
+          <p>Jesenja salata u kojoj se slatkoća cvekle, kremasti sir i hrskavi orasi savršeno slažu.</p>
+          <h4>Sastojci</h4>
+          <ul>
+            <li>2 kuvane ili pečene cvekle</li>
+            <li>2 šake rukole ili zelene salate</li>
+            <li>80 g mekog kozjeg sira</li>
+            <li>40 g oraha</li>
+            <li>Preliv: 3 kašike maslinovog ulja, 1 kašika jabukovog sirćeta, 1 kašičica meda, 1 kašičica senfa, so</li>
+          </ul>
+          <h4>Priprema</h4>
+          <ol>
+            <li>Orahe kratko tostirajte na suvom tiganju i grubo ih iseckajte.</li>
+            <li>Cveklu isecite na kriške ili kockice.</li>
+            <li>Sastojke za preliv dobro promešajte ili promućkajte u tegli.</li>
+            <li>Na tanjir rasporedite rukolu i cveklu, izmrvite kozji sir, pospite orasima i prelijte prelivom neposredno pre služenja.</li>
+          </ol>
+        </div>
+        <div class="en">
+          <p>An autumn salad where sweet beetroot, creamy cheese and crunchy walnuts come together perfectly.</p>
+          <h4>Ingredients</h4>
+          <ul>
+            <li>2 cooked or roasted beetroots</li>
+            <li>2 handfuls of rocket or green salad</li>
+            <li>80 g soft goat's cheese</li>
+            <li>40 g walnuts</li>
+            <li>Dressing: 3 tbsp olive oil, 1 tbsp apple cider vinegar, 1 tsp honey, 1 tsp mustard, salt</li>
+          </ul>
+          <h4>Method</h4>
+          <ol>
+            <li>Toast the walnuts briefly in a dry pan and chop them roughly.</li>
+            <li>Cut the beetroot into slices or cubes.</li>
+            <li>Mix or shake the dressing ingredients in a jar.</li>
+            <li>Arrange the rocket and beetroot on a plate, crumble over the goat's cheese, scatter the walnuts and drizzle with dressing just before serving.</li>
+          </ol>
+        </div>
+      </details>
+
+      <details class="recipe">
+        <summary>
+          <span class="recipe-title"><span class="sr">Domaća granola sa orasima i medom</span><span class="en">Homemade walnut and honey granola</span></span>
+          <span class="meta"><i class="far fa-clock" aria-hidden="true"></i> 35 min · <span class="sr">oko 8 porcija</span><span class="en">about 8 servings</span></span>
+        </summary>
+        <div class="sr">
+          <p>Hrskav doručak bez industrijskih aditiva. Služite uz jogurt, mleko ili sveže voće.</p>
+          <h4>Sastojci</h4>
+          <ul>
+            <li>250 g ovsenih pahuljica</li>
+            <li>120 g krupno seckanih oraha</li>
+            <li>50 g semenki suncokreta ili bundeve</li>
+            <li>4 kašike meda</li>
+            <li>3 kašike ulja (suncokretovog ili kokosovog)</li>
+            <li>1 kašičica cimeta i prstohvat soli</li>
+            <li>80 g suvog grožđa ili seckanih suvih šljiva</li>
+          </ul>
+          <h4>Priprema</h4>
+          <ol>
+            <li>Rernu zagrejte na 160 °C.</li>
+            <li>Med i ulje blago zagrejte da se sjedine, pa dodajte cimet i so.</li>
+            <li>U velikoj činiji pomešajte pahuljice, orahe i semenke, prelijte smesom od meda i dobro promešajte.</li>
+            <li>Rasporedite u tankom sloju na pleh sa papirom za pečenje i pecite 20 do 25 minuta, mešajući na pola vremena, dok ne porumeni.</li>
+            <li>Kad se ohladi, umešajte suvo voće. Čuvajte u zatvorenoj tegli do dve nedelje.</li>
+          </ol>
+        </div>
+        <div class="en">
+          <p>A crunchy breakfast with no industrial additives. Serve with yoghurt, milk or fresh fruit.</p>
+          <h4>Ingredients</h4>
+          <ul>
+            <li>250 g rolled oats</li>
+            <li>120 g roughly chopped walnuts</li>
+            <li>50 g sunflower or pumpkin seeds</li>
+            <li>4 tbsp honey</li>
+            <li>3 tbsp oil (sunflower or coconut)</li>
+            <li>1 tsp cinnamon and a pinch of salt</li>
+            <li>80 g raisins or chopped prunes</li>
+          </ul>
+          <h4>Method</h4>
+          <ol>
+            <li>Preheat the oven to 160 °C.</li>
+            <li>Gently warm the honey and oil until combined, then add the cinnamon and salt.</li>
+            <li>In a large bowl mix the oats, walnuts and seeds, pour over the honey mixture and stir well.</li>
+            <li>Spread thinly on a tray lined with baking paper and bake for 20 to 25 minutes, stirring halfway, until golden.</li>
+            <li>Once cool, stir in the dried fruit. Keep in a closed jar for up to two weeks.</li>
+          </ol>
+        </div>
+      </details>
+
+      <details class="recipe">
+        <summary>
+          <span class="recipe-title"><span class="sr">Karamelizovani orasi sa cimetom</span><span class="en">Cinnamon caramelised walnuts</span></span>
+          <span class="meta"><i class="far fa-clock" aria-hidden="true"></i> 15 min · <span class="sr">200 g</span><span class="en">200 g</span></span>
+        </summary>
+        <div class="sr">
+          <p>Brza slatka grickalica, a i lep domaći poklon u tegli. Odlični su i preko sladoleda ili ovsene kaše.</p>
+          <h4>Sastojci</h4>
+          <ul>
+            <li>200 g polutki oraha</li>
+            <li>3 kašike šećera (ili 2 kašike meda)</li>
+            <li>1 kašika putera</li>
+            <li>1/2 kašičice cimeta i prstohvat soli</li>
+          </ul>
+          <h4>Priprema</h4>
+          <ol>
+            <li>U tiganju na srednjoj vatri otopite puter sa šećerom i cimetom.</li>
+            <li>Ubacite orahe i neprestano mešajte 4 do 5 minuta, dok šećer ne karamelizuje i ne obavije orahe.</li>
+            <li>Odmah ih istresite na papir za pečenje, razdvojite viljuškom i pospite prstohvatom soli.</li>
+            <li>Kad se ohlade i stvrdnu, čuvajte ih u zatvorenoj tegli.</li>
+          </ol>
+          <p class="small">Pažnja: karamel je veoma vruć, ne probajte orahe dok se ne ohlade.</p>
+        </div>
+        <div class="en">
+          <p>A quick sweet snack and a lovely homemade gift in a jar. Also great over ice cream or porridge.</p>
+          <h4>Ingredients</h4>
+          <ul>
+            <li>200 g walnut halves</li>
+            <li>3 tbsp sugar (or 2 tbsp honey)</li>
+            <li>1 tbsp butter</li>
+            <li>1/2 tsp cinnamon and a pinch of salt</li>
+          </ul>
+          <h4>Method</h4>
+          <ol>
+            <li>Melt the butter with the sugar and cinnamon in a pan over medium heat.</li>
+            <li>Add the walnuts and stir constantly for 4 to 5 minutes, until the sugar caramelises and coats them.</li>
+            <li>Tip them straight onto baking paper, separate them with a fork and sprinkle with a pinch of salt.</li>
+            <li>Once cooled and hardened, keep them in a closed jar.</li>
+          </ol>
+          <p class="small">Careful: caramel is very hot, don't taste the walnuts until they have cooled.</p>
+        </div>
+      </details>
+    </section>
+
+    <!-- ===================== BLOG ===================== -->
+    <section id="blog">
+      <h2><i class="fas fa-blog" aria-hidden="true"></i> <span class="sr">Blog</span><span class="en">Blog</span></h2>
+
+      <details class="blog-post">
+        <summary>
+          <h3><span class="sr">Zašto su orasi savršena užina</span><span class="en">Why walnuts are the perfect snack</span></h3>
+          <p class="teaser"><span class="sr">Orasi nisu samo ukusni, već pružaju energiju tokom celog dana. Evo zašto vredi da ih uvek imate pri ruci.</span><span class="en">Walnuts aren't just tasty, they keep you going all day. Here's why it's worth always having some at hand.</span></p>
+          <span class="more"><span class="sr">Pročitaj više</span><span class="en">Read more</span></span>
+        </summary>
+        <div class="sr">
+          <p>Između obroka obično posegnemo za onim što je najbliže: keksom, pecivom ili čokoladicom. Takve grickalice brzo podignu energiju, ali isto tako brzo i nestanu, pa za sat vremena ponovo tražimo nešto da pojedemo.</p>
+          <p>Orasi rade drugačije. Šaka oraha (oko 30 g) sadrži zdrave masti, oko 4,6 g proteina i 2 g vlakana. Ta kombinacija se vari sporije, pa sitost traje duže, a nema ni dodatog šećera ni soli.</p>
+          <p>Orasi su i praktični: ne treba ih hladiti, ne mrve se po torbi i ne treba im nikakva priprema. Stavite ih u malu kutiju i ponesite na posao, u školu ili na put.</p>
+          <h4>Kako da ih uvrstite u dan</h4>
+          <ul>
+            <li>Ujutru: pospite ih preko ovsene kaše ili jogurta.</li>
+            <li>Na poslu: šaka oraha i jedna jabuka su odlična užina.</li>
+            <li>Posle treninga: orasi sa malo suvog voća vraćaju energiju.</li>
+            <li>Uveče: umesto čipsa uz film, probajte karamelizovane orahe iz naših recepata.</li>
+          </ul>
+          <p>Jedino pravilo je mera: orasi su kalorični, pa je jedna šaka dnevno sasvim dovoljna.</p>
+        </div>
+        <div class="en">
+          <p>Between meals, we usually grab whatever is closest: a biscuit, a pastry or a chocolate bar. These snacks give a quick boost, but it fades just as fast, and an hour later we're hungry again.</p>
+          <p>Walnuts work differently. A handful (about 30 g) contains healthy fats, about 4.6 g of protein and 2 g of fibre. This combination is digested more slowly, so you stay full for longer, with no added sugar or salt.</p>
+          <p>Walnuts are practical too: they don't need a fridge, they don't crumble in your bag and they need no preparation. Put them in a small box and take them to work, school or on a trip.</p>
+          <h4>How to fit them into your day</h4>
+          <ul>
+            <li>Morning: sprinkle them over porridge or yoghurt.</li>
+            <li>At work: a handful of walnuts and an apple make a great snack.</li>
+            <li>After a workout: walnuts with a little dried fruit restore your energy.</li>
+            <li>Evening: instead of crisps with a film, try the caramelised walnuts from our recipes.</li>
+          </ul>
+          <p>The only rule is moderation: walnuts are energy-dense, so one handful a day is plenty.</p>
+        </div>
+      </details>
+
+      <details class="blog-post">
+        <summary>
+          <h3><span class="sr">Od voćnjaka do vašeg stola</span><span class="en">From the orchard to your table</span></h3>
+          <p class="teaser"><span class="sr">Pogledajte kako izgleda jedna godina u voćnjaku oraha, od cvetanja do berbe, sušenja i pakovanja.</span><span class="en">Take a look at a year in a walnut orchard, from flowering to harvest, drying and packing.</span></p>
+          <span class="more"><span class="sr">Pročitaj više</span><span class="en">Read more</span></span>
+        </summary>
+        <div class="sr">
+          <p>Orah koji držite u ruci nastajao je skoro celu godinu. Evo kroz šta prolazi pre nego što stigne do vas.</p>
+          <h4>Proleće: cvetanje i zametanje plodova</h4>
+          <p>Orah cveta u aprilu i maju. Na istom stablu nalaze se i muški cvetovi (rese) i ženski cvetovi, a oprašivanje obavlja vetar. Zato je prolećni mraz najveća briga: jedna hladna noć u vreme cvetanja može da odnese veliki deo roda.</p>
+          <h4>Leto: rast i nega</h4>
+          <p>Tokom leta plod raste, a ljuska se postepeno stvrdnjava. To je period kada voćnjak treba pratiti najpažljivije: navodnjavanje u sušnim nedeljama, praćenje bolesti i štetočina i održavanje međurednog prostora.</p>
+          <h4>Jesen: berba</h4>
+          <p>Berba počinje krajem septembra i traje kroz oktobar. Znak da je orah zreo je zelena spoljašnja ljuska koja počinje da puca i odvaja se od ploda. Što se orah brže očisti od te ljuske, to je jezgro svetlije i ukusnije.</p>
+          <h4>Sušenje i čuvanje</h4>
+          <p>Sveže obran orah ima previše vlage za dugo čuvanje. Zato se pere i polako suši na vazduhu, dok vlažnost jezgra ne padne na oko 8%. Prebrzo sušenje na visokoj temperaturi može da pokvari ukus, pa je strpljenje ovde ključno.</p>
+          <h4>Sortiranje i pakovanje</h4>
+          <p>Na kraju se orasi sortiraju, odvajaju se oštećeni i prazni plodovi, a deo se krcka i ručno čisti u jezgra. Tek tada su spremni da krenu ka vama.</p>
+        </div>
+        <div class="en">
+          <p>The walnut in your hand took almost a whole year to grow. Here's what it goes through before it reaches you.</p>
+          <h4>Spring: flowering and fruit set</h4>
+          <p>Walnut trees flower in April and May. The same tree carries both male flowers (catkins) and female flowers, and pollination is done by the wind. That's why spring frost is the biggest worry: one cold night during flowering can take a large part of the crop.</p>
+          <h4>Summer: growth and care</h4>
+          <p>Over the summer the fruit grows and the shell gradually hardens. This is when the orchard needs the closest attention: irrigation in dry weeks, monitoring for diseases and pests, and keeping the rows tidy.</p>
+          <h4>Autumn: harvest</h4>
+          <p>Harvest starts at the end of September and runs through October. The sign of a ripe walnut is the green outer husk starting to split and come away from the nut. The sooner the husk is removed, the lighter and tastier the kernel.</p>
+          <h4>Drying and storage</h4>
+          <p>Freshly picked walnuts contain too much moisture to keep for long. They're washed and dried slowly in the air until the kernel moisture falls to around 8%. Drying too fast at high heat can spoil the flavour, so patience is key.</p>
+          <h4>Sorting and packing</h4>
+          <p>Finally the walnuts are sorted, damaged and empty nuts are removed, and some are cracked and hand-shelled into kernels. Only then are they ready to head your way.</p>
+        </div>
+      </details>
+
+      <details class="blog-post">
+        <summary>
+          <h3><span class="sr">Koliko je teško sačuvati plodove u intenzivnoj proizvodnji?</span><span class="en">How hard is it to protect walnuts in intensive production?</span></h3>
+          <p class="teaser"><span class="sr">Bakterioze, gljivične bolesti i nove štetočine: šta sve preti orahu i kako se proizvođači bore da sačuvaju rod.</span><span class="en">Bacterial blight, fungal diseases and new pests: what threatens walnuts and how growers fight to save the crop.</span></p>
+          <span class="more"><span class="sr">Pročitaj više</span><span class="en">Read more</span></span>
+        </summary>
+        <div class="sr">
+          <p>Dugo se verovalo da je orah drvo koje „raste samo“. U dvorištu, gde stoji usamljeno, to je često i tačno. Ali u voćnjaku, gde su stabla gusto posađena i gde se očekuje redovan i kvalitetan rod, slika je potpuno drugačija.</p>
+          <h4>Glavni neprijatelji oraha</h4>
+          <ul>
+            <li><strong>Bakteriozna plamenjača oraha</strong> (<em>Xanthomonas arboricola</em> pv. <em>juglandis</em>) najopasnija je bolest u našim uslovima. Napada lišće, cvetove i mlade plodove, na kojima se javljaju crne mrlje, a zaraženi plodovi često opadaju. Posebno je jaka u kišnim i toplim prolećima.</li>
+            <li><strong>Mrka pegavost lista</strong> (antraknoza, <em>Ophiognomonia leptostyla</em>) je gljivična bolest koja izaziva mrke pege na listovima i plodovima, slabi stablo i smanjuje kvalitet jezgra.</li>
+            <li><strong>Orahova muva</strong> (<em>Rhagoletis completa</em>) je relativno nova štetočina u Srbiji. Larve se hrane zelenom ljuskom, koja zato pocrni i zalepi se za orah, pa jezgro potamni i teško se čisti.</li>
+            <li><strong>Jabukin smotavac</strong> (<em>Cydia pomonella</em>) napada i orah: larva ulazi u plod i oštećuje jezgro.</li>
+          </ul>
+          <h4>Kako se voćnjak štiti</h4>
+          <p>Zaštita počinje od dobrih agrotehničkih mera: pravilnog razmaka sadnje, rezidbe koja omogućava provetravanje krošnje, uklanjanja opalog lišća i zaraženih plodova. Za praćenje štetočina koriste se žute lepljive i feromonske klopke, a tretmani se rade kada su zaista potrebni, prema preporukama prognozno-izveštajne službe zaštite bilja.</p>
+          <p>Koriste se samo registrovana sredstva za zaštitu bilja, uz poštovanje karence, odnosno propisanog vremena između poslednjeg tretmana i berbe. Tako plod koji stigne do potrošača ostaje bezbedan.</p>
+          <h4>Zašto je to važno vama</h4>
+          <p>Kada kupujete orah, kupujete i ceo taj trud. Svetlo, puno i zdravo jezgro nije slučajnost, već rezultat nege koja traje od ranog proleća do berbe.</p>
+        </div>
+        <div class="en">
+          <p>Walnuts were long believed to be trees that "grow on their own". In a backyard, where a tree stands alone, that's often true. But in an orchard, where trees are planted closely and regular, high-quality yields are expected, the picture is completely different.</p>
+          <h4>The walnut's main enemies</h4>
+          <ul>
+            <li><strong>Walnut bacterial blight</strong> (<em>Xanthomonas arboricola</em> pv. <em>juglandis</em>) is the most dangerous disease in our conditions. It attacks leaves, flowers and young fruit, causing black spots, and infected nuts often drop. It is especially severe in warm, rainy springs.</li>
+            <li><strong>Walnut anthracnose</strong> (<em>Ophiognomonia leptostyla</em>) is a fungal disease that causes brown spots on leaves and fruit, weakens the tree and lowers kernel quality.</li>
+            <li><strong>Walnut husk fly</strong> (<em>Rhagoletis completa</em>) is a relatively new pest in Serbia. Its larvae feed on the green husk, which turns black and sticks to the nut, darkening the kernel and making it hard to clean.</li>
+            <li><strong>Codling moth</strong> (<em>Cydia pomonella</em>) also attacks walnuts: the larva bores into the nut and damages the kernel.</li>
+          </ul>
+          <h4>How the orchard is protected</h4>
+          <p>Protection starts with good growing practice: proper tree spacing, pruning that lets air move through the canopy, and removing fallen leaves and infected fruit. Yellow sticky traps and pheromone traps are used to monitor pests, and treatments are applied only when they are really needed, following the advice of the regional plant protection forecasting service.</p>
+          <p>Only registered plant protection products are used, respecting the pre-harvest interval, the required time between the last treatment and harvest. That keeps the nuts that reach consumers safe.</p>
+          <h4>Why this matters to you</h4>
+          <p>When you buy walnuts, you're buying all of that effort. A light, full and healthy kernel is no accident; it's the result of care that lasts from early spring to harvest.</p>
+        </div>
+      </details>
+
+      <details class="blog-post">
+        <summary>
+          <h3><span class="sr">Kako čuvati orahe da ostanu sveži</span><span class="en">How to store walnuts so they stay fresh</span></h3>
+          <p class="teaser"><span class="sr">Orasi mogu da užegnu ako se loše čuvaju. Evo kako da im sačuvate ukus mesecima.</span><span class="en">Walnuts can go rancid if stored badly. Here's how to keep their flavour for months.</span></p>
+          <span class="more"><span class="sr">Pročitaj više</span><span class="en">Read more</span></span>
+        </summary>
+        <div class="sr">
+          <p>Orasi su bogati nezasićenim mastima, i upravo zbog toga su osetljivi. Toplota, svetlost i vazduh ubrzavaju oksidaciju masti, pa orah koji je dugo stajao na toplom dobija gorak, užegao ukus.</p>
+          <h4>Orasi u ljusci</h4>
+          <p>Ljuska je najbolja prirodna zaštita. Orahe u ljusci čuvajte na hladnom, suvom i tamnom mestu, u platnenoj vreći ili mrežastoj kesi koja propušta vazduh. Tako mogu da traju i do godinu dana.</p>
+          <h4>Očišćena jezgra</h4>
+          <ul>
+            <li><strong>U ostavi:</strong> u zatvorenoj tegli, nekoliko nedelja.</li>
+            <li><strong>U frižideru:</strong> u dobro zatvorenoj posudi, oko šest meseci.</li>
+            <li><strong>U zamrzivaču:</strong> u kesi za zamrzavanje, do godinu dana. Ne treba ih odmrzavati, mogu se koristiti odmah.</li>
+          </ul>
+          <p>Orasi lako upijaju mirise, pa ih ne držite pored luka, začina ili ribe.</p>
+          <h4>Kako da prepoznate užegao orah</h4>
+          <p>Svež orah miriše blago i slatkasto. Ako jezgro miriše na boju ili staro ulje, ako je oštro gorko ili lepljivo, nemojte ga jesti.</p>
+        </div>
+        <div class="en">
+          <p>Walnuts are rich in unsaturated fats, and that's exactly what makes them delicate. Heat, light and air speed up fat oxidation, so a walnut left too long somewhere warm develops a bitter, rancid taste.</p>
+          <h4>In-shell walnuts</h4>
+          <p>The shell is the best natural protection. Keep in-shell walnuts in a cool, dry, dark place, in a cloth sack or a mesh bag that lets air through. Stored like this, they can last up to a year.</p>
+          <h4>Shelled kernels</h4>
+          <ul>
+            <li><strong>In the pantry:</strong> in a closed jar, for a few weeks.</li>
+            <li><strong>In the fridge:</strong> in a well-sealed container, for about six months.</li>
+            <li><strong>In the freezer:</strong> in a freezer bag, for up to a year. There's no need to thaw them; use them straight away.</li>
+          </ul>
+          <p>Walnuts easily absorb odours, so don't keep them next to onions, spices or fish.</p>
+          <h4>How to spot a rancid walnut</h4>
+          <p>A fresh walnut smells mild and slightly sweet. If the kernel smells of paint or old oil, tastes sharply bitter or feels sticky, don't eat it.</p>
+        </div>
+      </details>
+
+      <details class="blog-post">
+        <summary>
+          <h3><span class="sr">Kako prepoznati kvalitetan orah</span><span class="en">How to recognise a quality walnut</span></h3>
+          <p class="teaser"><span class="sr">Boja jezgra, težina ploda, miris: nekoliko jednostavnih znakova po kojima ćete izabrati dobar orah.</span><span class="en">Kernel colour, weight, smell: a few simple signs that help you pick a good walnut.</span></p>
+          <span class="more"><span class="sr">Pročitaj više</span><span class="en">Read more</span></span>
+        </summary>
+        <div class="sr">
+          <p>Na pijaci i u prodavnici orasi često izgledaju isto, ali razlika u kvalitetu može biti velika. Evo na šta da obratite pažnju.</p>
+          <h4>Orasi u ljusci</h4>
+          <ul>
+            <li><strong>Težina:</strong> dobar orah je težak za svoju veličinu. Lagan plod često krije suvo ili prazno jezgro.</li>
+            <li><strong>Ljuska:</strong> treba da bude čista, bez tamnih mrlja, pukotina i tragova buđi.</li>
+            <li><strong>Zvuk:</strong> kad protresete orah, jezgro ne bi trebalo da zvecka. Zveckanje znači da se jezgro osušilo i smanjilo.</li>
+          </ul>
+          <h4>Očišćena jezgra</h4>
+          <ul>
+            <li><strong>Boja:</strong> svetla, ujednačena boja, od slamaste do svetlo smeđe, znak je svežine i dobre berbe. Tamna jezgra nisu nužno pokvarena, ali su obično slabijeg ukusa.</li>
+            <li><strong>Izgled:</strong> jezgra treba da budu puna i čvrsta, a ne smežurana.</li>
+            <li><strong>Miris i ukus:</strong> blag, orašast i slatkast. Užegao miris znači da je orah star ili loše čuvan.</li>
+          </ul>
+          <h4>Pitajte za berbu</h4>
+          <p>Najjednostavniji savet je da pitate iz koje je berbe orah. Kod proizvođača koji prodaje direktno to je uvek lako saznati, a orah iz poslednje jeseni je uvek najbolji izbor.</p>
+        </div>
+        <div class="en">
+          <p>At the market or in a shop, walnuts often look the same, but the difference in quality can be big. Here's what to look out for.</p>
+          <h4>In-shell walnuts</h4>
+          <ul>
+            <li><strong>Weight:</strong> a good walnut feels heavy for its size. A light nut often hides a dry or empty kernel.</li>
+            <li><strong>Shell:</strong> it should be clean, with no dark stains, cracks or traces of mould.</li>
+            <li><strong>Sound:</strong> when you shake the nut, the kernel shouldn't rattle. Rattling means the kernel has dried out and shrunk.</li>
+          </ul>
+          <h4>Shelled kernels</h4>
+          <ul>
+            <li><strong>Colour:</strong> a light, even colour, from straw to light brown, signals freshness and a good harvest. Darker kernels aren't necessarily spoiled, but they usually taste weaker.</li>
+            <li><strong>Appearance:</strong> kernels should be plump and firm, not shrivelled.</li>
+            <li><strong>Smell and taste:</strong> mild, nutty and slightly sweet. A rancid smell means the walnut is old or badly stored.</li>
+          </ul>
+          <h4>Ask about the harvest</h4>
+          <p>The simplest tip is to ask which harvest the walnuts are from. With a grower who sells directly, that's always easy to find out, and walnuts from the latest autumn are always the best choice.</p>
+        </div>
+      </details>
+
+      <details class="blog-post">
+        <summary>
+          <h3><span class="sr">Koliko oraha dnevno je dovoljno?</span><span class="en">How many walnuts a day is enough?</span></h3>
+          <p class="teaser"><span class="sr">Šaka, sedam oraha ili 30 grama: šta znači „umerena količina“ i kako je lako izmeriti bez vage.</span><span class="en">A handful, seven walnuts or 30 grams: what "a moderate amount" means and how to measure it without scales.</span></p>
+          <span class="more"><span class="sr">Pročitaj više</span><span class="en">Read more</span></span>
+        </summary>
+        <div class="sr">
+          <p>Kada se govori o orasima, najčešće se pominje količina od 30 grama dnevno. Na toj količini zasnovana je i zvanična zdravstvena izjava EU o elastičnosti krvnih sudova, a ona pokriva i preporučeni dnevni unos od 2 g biljne omega-3 kiseline.</p>
+          <h4>Kako izgleda 30 grama</h4>
+          <ul>
+            <li>jedna puna šaka očišćenih jezgara,</li>
+            <li>oko 7 celih oraha, odnosno oko 14 polutki,</li>
+            <li>oko 3 pune kašike seckanih oraha.</li>
+          </ul>
+          <h4>Zašto ne više?</h4>
+          <p>Orasi su zdravi, ali kalorični: 30 g ima oko 196 kcal. Najbolje je da orasi zamene neku drugu grickalicu, a ne da se dodaju na sve ostalo što pojedete tokom dana.</p>
+          <h4>Na šta treba obratiti pažnju</h4>
+          <ul>
+            <li>Orasi su jedan od čestih alergena. Kod male dece i osoba sa alergijom na orašaste plodove budite posebno oprezni.</li>
+            <li>Cele orahe ne dajte deci mlađoj od pet godina zbog opasnosti od gušenja; za njih ih sameljite.</li>
+            <li>Ako imate posebnu ishranu ili zdravstveno stanje, posavetujte se sa lekarom ili nutricionistom.</li>
+          </ul>
+          <p>Ukratko: jedna šaka dnevno, po mogućstvu sirovih i neslanih oraha, jednostavan je i ukusan dodatak raznovrsnoj ishrani.</p>
+        </div>
+        <div class="en">
+          <p>When people talk about walnuts, the amount most often mentioned is 30 grams a day. That's the amount behind the official EU health claim on blood vessel elasticity, and it also covers the recommended daily intake of 2 g of plant omega-3.</p>
+          <h4>What 30 grams looks like</h4>
+          <ul>
+            <li>one full handful of shelled kernels,</li>
+            <li>about 7 whole walnuts, or about 14 halves,</li>
+            <li>about 3 heaped tablespoons of chopped walnuts.</li>
+          </ul>
+          <h4>Why not more?</h4>
+          <p>Walnuts are healthy but energy-dense: 30 g has about 196 kcal. It's best for walnuts to replace another snack rather than be added on top of everything else you eat during the day.</p>
+          <h4>Things to keep in mind</h4>
+          <ul>
+            <li>Walnuts are a common allergen. Take extra care with young children and anyone allergic to tree nuts.</li>
+            <li>Don't give whole walnuts to children under five because of the choking risk; grind them instead.</li>
+            <li>If you follow a special diet or have a health condition, check with a doctor or nutritionist.</li>
+          </ul>
+          <p>In short: a handful a day, ideally raw and unsalted, is a simple and tasty addition to a varied diet.</p>
+        </div>
+      </details>
+    </section>
+
+    <!-- ===================== KONTAKT ===================== -->
+    <section id="contact">
+      <h2><i class="fas fa-envelope" aria-hidden="true"></i> <span class="sr">Kontakt i porudžbine</span><span class="en">Contact and orders</span></h2>
+      <p class="sr">Želite da poručite orahe, pitate za cenu ili dostupnost? Pozovite nas ili pošaljite poruku, javićemo vam se u najkraćem roku.</p>
+      <p class="en">Would you like to order walnuts or ask about prices and availability? Call us or send a message and we'll get back to you as soon as possible.</p>
+      <ul class="contact-list">
+        <li><i class="fas fa-at" aria-hidden="true"></i> <a href="mailto:g.gajic@yahoo.com">g.gajic@yahoo.com</a></li>
+        <li><i class="fas fa-phone" aria-hidden="true"></i> <span class="sr">Telefon:</span><span class="en">Phone:</span> <a href="tel:+381642459798">+381 64 245 9798</a></li>
+        <li><i class="fas fa-location-dot" aria-hidden="true"></i> <span class="sr">Adresa:</span><span class="en">Address:</span> Hajduk Stanka 119, 15357 Klenje</li>
+      </ul>
+
+      <form id="contact-form" action="https://formspree.io/f/mzzrdrda" method="POST" novalidate>
+        <label for="f-name"><span class="sr">Ime</span><span class="en">Name</span></label>
+        <input id="f-name" type="text" name="name" autocomplete="name" required />
+        <label for="f-email">Email</label>
+        <input id="f-email" type="email" name="email" autocomplete="email" required />
+        <label for="f-message"><span class="sr">Poruka</span><span class="en">Message</span></label>
+        <textarea id="f-message" name="message" rows="5" required></textarea>
+        <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+        <button type="submit"><i class="fas fa-paper-plane" aria-hidden="true"></i> <span class="sr">Pošalji poruku</span><span class="en">Send message</span></button>
+      </form>
+    </section>
+  </main>
 
   <footer>
-    <span class="lang" data-sr="&copy; 2020 Maxtra Orasi. Sva prava zadržana." data-en="&copy; 2020 Maxtra Walnuts. All rights reserved.">
-      &copy; 2020 Maxtra Orasi. Sva prava zadržana.
-    </span>
+    <span class="sr">&copy; 2020–<span class="year">2026</span> Maxtra Orasi. Sva prava zadržana.</span>
+    <span class="en">&copy; 2020–<span class="year">2026</span> Maxtra Walnuts. All rights reserved.</span>
   </footer>
   <script src="main.js"></script>
 </body>

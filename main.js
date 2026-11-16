@@ -64,6 +64,12 @@
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') closeMenu();
   });
+  document.addEventListener('click', function (e) {
+    if (navList.classList.contains('active') && !e.target.closest('header')) closeMenu();
+  });
+  window.addEventListener('resize', function () {
+    if (window.innerWidth > 960) closeMenu();
+  });
 
   // ---------- Footer year ----------
   var year = String(new Date().getFullYear());
